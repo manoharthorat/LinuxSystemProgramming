@@ -1,0 +1,37 @@
+ in the /dev/fd directory are rarely used within programs. Their most com-
+mon use is in the shell. Many user-level commands take filename arguments, and
+sometimes we would like to put them in a pipeline and have one of the arguments
+be standard input or output instead. For this purpose, some programs (e.g., diff, ed,
+tar, and comm) have evolved the hack of using an argument consisting of a single
+hyphen ( - ) to mean “use standard input or output (as appropriate) for this file-
+name argument.” Thus, to compare a file list from ls against a previously built file
+list, we might write the following:
+The files in the /dev/fd directory are rarely used within programs. Their most com-
+mon use is in the shell. Many user-level commands take filename arguments, and
+sometimes we would like to put them in a pipeline and have one of the arguments
+be standard input or output instead. For this purpose, some programs (e.g., diff, ed,
+tar, and comm) have evolved the hack of using an argument consisting of a single
+hyphen ( - ) to mean “use standard input or output (as appropriate) for this file-
+name argument.” Thus, to compare a file list from ls against a previously built file
+list, we might write the following:The files in the /dev/fd directory are rarely used within programs. Their most com-
+mon use is in the shell. Many user-level commands take filename arguments, and
+sometimes we would like to put them in a pipeline and have one of the arguments
+be standard input or output instead. For this purpose, some programs (e.g., diff, ed,
+tar, and comm) have evolved the hack of using an argument consisting of a single
+hyphen ( - ) to mean “use standard input or output (as appropriate) for this file-
+name argument.” Thus, to compare a file list from ls against a previously built file
+list, we might write the following:The files in the /dev/fd directory are rarely used within programs. Their most com-
+mon use is in the shell. Many user-level commands take filename arguments, and
+sometimes we would like to put them in a pipeline and have one of the arguments
+be standard input or output instead. For this purpose, some programs (e.g., diff, ed,
+tar, and comm) have evolved the hack of using an argument consisting of a single
+hyphen ( - ) to mean “use standard input or output (as appropriate) for this file-
+name argument.” Thus, to compare a file list from ls against a previously built file
+list, we might write the following:The files in the /dev/fd directory are rarely used within programs. Their most com-
+mon use is in the shell. Many user-level commands take filename arguments, and
+sometimes we would like to put them in a pipeline and have one of the arguments
+be standard input or output instead. For this purpose, some programs (e.g., diff, ed,
+tar, and comm) have evolved the hack of using an argument consisting of a single
+hyphen ( - ) to mean “use standard input or output (as appropriate) for this file-
+name argument.” Thus, to compare a file list from ls against a previously built file
+list, we might write the following:
