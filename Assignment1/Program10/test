@@ -1,0 +1,351 @@
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+ndbook, the Nutshell Handbook logo, and the O’Reilly logo are registered trademarks of
+O’Reilly Media, Inc. Managing Projects with GNU Make, the image of a potto, and related trade dress
+are trademarks of O’Reilly Media, Inc.
+Many of the designations used by manufacturers and sellers to distinguish their products are claimed as
+trademarks. Where those designations appear in this book, and O’Reilly Media, Inc. was aware of a
+trademark claim, the designations have been printed in caps or initial caps.
+Permission is granted to copy, distribute, and/or modify this document under the terms of the GNU
+Free Documentation License, Version 1.1 or any later version published by the Free Software
+Foundation. A copy of this license is included in Appendix C.
+While every precaution has been taken in the preparation of this book, the publisher and author assume
+no responsibility for errors or omissions, or for damages resulting from the use of the information
+contained herein.
+
+

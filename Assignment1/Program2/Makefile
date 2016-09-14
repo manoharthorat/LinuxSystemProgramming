@@ -1,9 +1,9 @@
 all:
 	gcc AcceptName.c -o myexe
 run:
-	./myexe
+	./myexe ${ARGS}
 usage:
-	@echo'Enter the Name'
+	@echo'use as : ARGS="CommandLine Arguments "run '
 clean:
 	rm myexe
 

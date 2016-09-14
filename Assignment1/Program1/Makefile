@@ -3,7 +3,7 @@ all:
 run:
 	./myexe
 usage:
-	@echo'Compile and Run'
-clearn:
+	@echo'use as : run '
+clean:
 	rm myexe
 
