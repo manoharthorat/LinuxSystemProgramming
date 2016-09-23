@@ -1,0 +1,49 @@
+Each of these functions returns information about a file. stat( ) returns information
+about the file denoted by the path, path, while fstat( ) returns information about
+the file represented by the file descriptor fd . lstat( ) is identical to stat( ) , except
+that in the case of a symbolic link, lstat( ) returns information about the link itself
+and not the target file.
+Each of these functions stores information in a stat structure, which is provided by
+the user. The stat structure is defined in <bits/stat.h> , which is included from
+<sys/stat.h> :
+struct stat {
+dev_t st_dev;
+ino_t st_ino;
+mode_t st_mode;
+nlink_t st_nlink;
+uid_t st_uid;
+gid_t st_gid;
+dev_t st_rdev;
+off_t st_size;
+blksize_t st_blksize;
+blkcnt_t st_blocks;
+time_t st_atime;
+time_t st_mtime;
+time_t st_ctime;
+};
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+ID of device containing file */
+inode number */
+permissions */
+number of hard links */
+user ID of owner */
+group ID of owner */
+device ID (if special file) */
+total size in bytes */
+blocksize for filesystem I/O */
+number of blocks allocated */
+last access time */
+last modification time */
+last status change time */

@@ -1,0 +1,15 @@
+Each of these functions returns information about a file. stat( ) returns information
+about the file denoted by the path, path, while fstat( ) returns information about
+the file represented by the file descriptor fd . lstat( ) is identical to stat( ) , except
+that in the case of a symbolic link, lstat( ) returns information about the link itself
+and not the target file.
+Each of these functions stores information in a stat structure, which is provided by
+the user. The stat structure is defined in <bits/stat.h> , which is included from
+<sys/stat.h> :Each of these functions returns information about a file. stat( ) returns information
+about the file denoted by the path, path, while fstat( ) returns information about
+the file represented by the file descriptor fd . lstat( ) is identical to stat( ) , except
+that in the case of a symbolic link, lstat( ) returns information about the link itself
+and not the target file.
+Each of these functions stores information in a stat structure, which is provided by
+the user. The stat structure is defined in <bits/stat.h> , which is included from
+<sys/stat.h> :
