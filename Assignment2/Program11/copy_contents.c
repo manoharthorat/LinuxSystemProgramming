@@ -2,6 +2,7 @@
 
 #include<stdio.h>
 #include<fcntl.h>
+#include<unistd.h>
 
 int main(int argc, char * argv[])
 {
@@ -14,14 +15,13 @@ int main(int argc, char * argv[])
 		return -1;
 	}	
 	
-	fd=open(argv[1],O_RDONLY);
-	if(fd==-1)
+	if( (fd=open(argv[1],O_RDONLY)) <0 )
 	{
 		printf("Unable to Open the file \n");
 		return -1;
 	}
-	fd1=open(argv[2],O_RDONLY);
-	if(fd==-1)
+
+	if((fd1=open(argv[2],O_WRONLY))<0)
 	{
 		printf("Unable to open the destination file \n");
 		return -1;
@@ -31,8 +31,8 @@ int main(int argc, char * argv[])
 	{
 		write(fd1,buff,ret);
 	}
-
-
+	close(fd);
+	close(fd1);
 return 0;
 }
 
