@@ -1,0 +1,21 @@
+ program which is used to demonstrate concept of I/O redirection.
+
+16. Write a aprogram which accept directory name from user and create new directory of that name.
+
+17. Write a program which accept two file names from user and check whether contents of that two files are equal are not.
+
+18.  Write a program which accept directory name from user and copy first 10 bytes from all regular files into newly created file named as demo.
+
+19. Write a program which accept file name and position from user and read 20 bytes from that position.
+
+20. Write a program which writes structure in file.
+
+21. Write a program which accept file name from user which contains information of emloyee , we have to read all contents of that file.
+
+22. 	Write a program which accept directory name from user and write information of all regular file in and then read the contents from that file.
+
+23. 	Write a program which accept directory name from user and combine all contents of file from that directory into one file named as AllCombine.
+
+24. 	Write a program which accept file name which contains data of all file. We have to create all file again.
+
+
