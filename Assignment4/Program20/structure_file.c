@@ -15,11 +15,19 @@ int main(int argc, char * argv[])
 		char name[20];
 		int no;
 	}INFO;
+	if(argc!=2)
+	{
+		printf("Usage : ExeName FileName\n");	
+		return -1;
+	}
+	INFO obj1,obj2;
 	
-	INFO obj2,obj3;
-	INFO * ptr1;
-	ptr1=&obj2;
+	strcpy(obj1.name,"Manohar");
+	strcpy(obj2.name,"Thorat");
 
+	obj1.no=10;
+	obj2.no=30;
+	
 	fd=open(argv[1],O_WRONLY);
 	if(fd==-1)
 	{
@@ -27,20 +35,19 @@ int main(int argc, char * argv[])
 		return -1;
 	}
 
-	strcpy(obj2.name,"Manohar");
-	strcpy(obj3.name,"Thorat");
-	obj2.no=20;
-	obj3.no=40;
-	
-	if((ret=write(fd,(char*)&obj2,sizeof(obj2))) < 0)
+	ret=write(fd,(char*)&obj1,sizeof(obj1));
+	if(ret==-1)
 	{
 		printf("Unable to write the contents obj2 \n");
-		return 0;
+		return -1;
 	}
-	if((ret=write(fd,(char*)&obj3,sizeof(obj3))) < 0)
+	
+	
+	ret=write(fd,(char*)&obj2,sizeof(obj2));
+	if(ret==-1)
 	{
-		printf("Unable to write the contents obj3 \n");
-		return 0;
+		printf("Unable to write the contents obj2 \n");
+		return -1;
 	}
 	
 	close(fd);
