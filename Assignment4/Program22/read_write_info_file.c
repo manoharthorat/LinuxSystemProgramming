@@ -1,51 +1,47 @@
-/*22. 	Write a program which accept directory name from user and write information of all regular file in and then read the contents from that file.*/
+/*22. 	Write a program which accept directory name from user and 
+write information of all regular file in and 
+then read the contents from that file.*/
 
 #include<stdio.h>
-#include<fcntl.h>
 #include<dirent.h>
 #include<sys/stat.h>
-#include<unistd.h>
 #include<string.h>
-#include<sys/types.h>
-
+#include<unistd.h>
+#include<fcntl.h>
 int main(int argc, char * argv[])
 {
+	int fd;
+	int ret=0;
 	DIR * dir;
 	struct dirent * entry;
 	struct stat fstat;
-	char name[256]={'\0'};
-	int fd;
-	int ret;	
-	typedef struct 
+	char name[20]={'\0'};
+
+	
+	if(argc!=2)
 	{
-		char name[256];
+		printf("Usage : ExeName DirectoryName \n");
+		return 0;
+	}
+	
+	typedef struct{
+		char name[20];
 		int ino;
 		int size;
-	}FILEINFO;
+	}FINFO;
 	
-	FILEINFO obj;
-	
-	
-	if(argc !=2)
-	{
-		printf("Usage : ExeName DirectoryName\n");	
-		return -1;
-	}	
+	FINFO obj;
 	if((dir=opendir(argv[1]))==NULL)
 	{
-		printf("Unable to open the directory \n");
+		printf("Unable to open the Specific Directory\n");
 		return -1;
 	}
-
-	fd=creat("demo",0666);
-	if(fd==-1)
-	{
-		printf("Unable to create the file \n");
-		return -1;		
-	}
+	
+	fd=creat("Demo",0666);
+	
 	while((entry=readdir(dir))!=NULL)
 	{
-		sprintf(name,"%s/%S",argv[1],entry->d_name);
+		sprintf(name,"%s/%s",argv[1],entry->d_name);
 		stat(name,&fstat);
 		if(S_ISREG(fstat.st_mode))
 		{
@@ -53,19 +49,17 @@ int main(int argc, char * argv[])
 			obj.ino=fstat.st_ino;
 			obj.size=fstat.st_size;
 			write(fd,&obj,sizeof(obj));
-			
-		}
+
+		}		
 	}
 	closedir(dir);
-		
-	printf("Informtion of All Files \n");
 	close(fd);
-	fd=open("demo",O_RDONLY);
-	while((ret=read(fd,&obj,sizeof(obj)))!=0)
+	printf("Information of All Files \n");
+	fd=open("Demo",O_RDONLY);
+	
+	while((read(fd,&obj,sizeof(obj)))!=0)
 	{
-		printf("%d\t%s\t%d",obj.ino,obj.name,obj.size);
+		printf("%d\t%s\t%d\n",obj.ino,obj.name,obj.size);	
 	}
-
-
 return 0;
 }
