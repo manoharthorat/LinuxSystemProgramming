@@ -3,15 +3,15 @@
 
 int main()
 {
+	printf(" PP %d \n",getpid());
 	if(fork()==0)
 	{
-		printf("Before Process Creation %d \n",getpid());
-		execl("./myexe1","A","B",NULL);
+		printf("Before Process Creation %d\n",getpid());
+		execl("./exec2","aString","bString",NULL);
 	}
 	else
 	{
-		printf("Inside Parent Process %d \n",getpid());
+		printf("Inside Parent Process\n");
 	}
-
 return 0;
 }
