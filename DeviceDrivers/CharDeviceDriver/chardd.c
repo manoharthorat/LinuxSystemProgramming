@@ -3,7 +3,7 @@
 #include<linux/device.h>
 #include<linux/kernel.h>
 #include<linux/fs.h>
-#include<asm/unaccess.h>
+//#include<asm/unaccess.h>
 
 #define DEVICE_NAME "Character_Driver_1"
 #define CLASS_NAME "CHAR DRIVER"
@@ -20,12 +20,16 @@ static int numberOpens=0;
 static struct class* charClass=NULL;
 static struct device* charDevice=NULL;
 
+static int dev_open(struct inode *, struct file *);
+static int dev_release(struct inode *, struct file *);
+static ssize_t dev_read(struct file *, char *, size_t ,loff_t *);
+static ssize_t dev_write(struct file * , const char *, size_t , loff_t *);
 static struct file_operations fops=
 {
 	.open=dev_open,
 	.read=dev_read,
 	.write=dev_write,
-	.release=dev+release
+	.release=dev_release
 
 };
 static int __init char_init(void)
@@ -56,11 +60,11 @@ static int __init char_init(void)
 	
 	if(IS_ERR(charDevice))
 	{
-		class_destroy(chaeClass);
+		class_destroy(charClass);
 		unregister_chrdev(majornumber,DEVICE_NAME);
 		printk(KERN_ALERT"Failed to create a Device File\n");
 		
-		return PRT_ERR(charDEvice);
+		return PTR_ERR(charDevice);
 	}
 
 	printk(KERN_INFO"Device Class Created Correctly\n");
@@ -71,7 +75,7 @@ static int __init char_init(void)
 //Device Cleanup function
 static void __exit char_exit(void)
 {
-	device_destroy(charClass,MKDEV(majornumber),0);
+	device_destroy(charClass,MKDEV(majornumber,0));
 	class_unregister(charClass);
 	class_destroy(charClass);
 	unregister_chrdev(majornumber,DEVICE_NAME);
@@ -87,10 +91,10 @@ static int dev_open(struct inode *inodep,struct file *filep)
 }
 
 //This function is called whenever device is being read from user space 
-static ssize_t dev_read(struct file *filep,char *buffer,size_t len,loff *offset)
+static ssize_t dev_read(struct file *filep,char *buffer,size_t len,loff_t *offset)
 {
 	int error_count=0;
-	error_count= copy_to_use(buffer,message,sizeof_message);
+	error_count = copy_to_user(buffer,message,sizeof_message);
 	if(error_count==0)
 	{
 		printk(KERN_INFO"Sent %d Character to the user \n",sizeof_message);
@@ -105,25 +109,19 @@ static ssize_t dev_read(struct file *filep,char *buffer,size_t len,loff *offset)
 }
 
 //Data is sent to the device from the user The data is copied to the message array in this
-static ssize_t dev_write(struct file *filep,const char *buffer,size_t len,loff_t * offset)
+static ssize_t dev_write(struct file *filep,const char *buffer,size_t len, loff_t * offset)
 {
 	sprintf(message,"%s (%d letters)",buffer,len);
-	size_of_message=strlen(message);
+	sizeof_message=strlen(message);
 	printk(KERN_INFO"Received %d characters from the user \n",len);
 	return len;
 }
 
-static ssize_t dev_release()
+static ssize_t dev_release(struct inode * inodep, struct file * filep)
 {
 	printk(KERN_INFO"Device Successfully closed \n");
 	return 0;
 }
-
-module_init(char_init);
-module_exit(char_exit);
-
-
-
 
 module_init(char_init);
 module_exit(char_exit);
