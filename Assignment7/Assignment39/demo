@@ -1,0 +1,20 @@
+3.Write a program in which parent process waits till its child process terminates.
+
+34. Write a program which create three level process hierarchy whwre process 1 creates process 2 and it internally creates process 3.
+
+35.  Write a program which creates three diffrent processess internally as process2, process3, process4.
+
+36.  Write a program which creates two processess as process2 and process3 and our parent process terminates till both the processess terminates.
+
+37. Write a program which is used to create deamon process.
+
+38. Write a program which creates new process which is responsible to write all file names which are present on desktop in demo file which should be created newly.
+
+39. Write a program which creates two processess.
+
+ Process 1 count number of capital characters from demo.txt file.
+
+ And process 2 count number of capital characters from hello.txt file. 
+
+Both the processess writes its count in count.txt file.
+
