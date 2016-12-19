@@ -1,0 +1,8 @@
+1.First Create module1.c (write a program init )
+2.Create a makefile 
+3.Run make command on terminal 
+4.The program gets compile and .ko file will create 
+5.Run $insmod module1.ko 
+6.To see wheather module gets inserted or not run $lsmod 
+7.To see module information run $modinfo 
+
