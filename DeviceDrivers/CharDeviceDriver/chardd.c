@@ -3,7 +3,7 @@
 #include<linux/device.h>
 #include<linux/kernel.h>
 #include<linux/fs.h>
-//#include<asm/unaccess.h>
+#include<linux/uaccess.h>
 
 #define DEVICE_NAME "Character_Driver_1"
 #define CLASS_NAME "CHAR DRIVER"
