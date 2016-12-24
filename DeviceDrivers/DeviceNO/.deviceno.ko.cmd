@@ -1,0 +1,1 @@
+cmd_/home/manohar/LinuxSystemProgramming/DeviceDrivers/DeviceNO/deviceno.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/manohar/LinuxSystemProgramming/DeviceDrivers/DeviceNO/deviceno.ko /home/manohar/LinuxSystemProgramming/DeviceDrivers/DeviceNO/deviceno.o /home/manohar/LinuxSystemProgramming/DeviceDrivers/DeviceNO/deviceno.mod.o

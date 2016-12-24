@@ -1,0 +1,1 @@
+cmd_/home/manohar/LinuxSystemProgramming/DeviceDrivers/USBDD/usbdd.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/manohar/LinuxSystemProgramming/DeviceDrivers/USBDD/usbdd.ko /home/manohar/LinuxSystemProgramming/DeviceDrivers/USBDD/usbdd.o /home/manohar/LinuxSystemProgramming/DeviceDrivers/USBDD/usbdd.mod.o
