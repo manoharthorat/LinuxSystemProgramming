@@ -1,0 +1,371 @@
+
+up vote
+11
+down vote
+favorite
+3
+	
+
+I unsafely removed a usb device that was attached to loop0 with losetup and could not delete nor detach loop0 afterwards.
+losetup -a shows /dev/loop0: [0005]:145606719 (/dev/sdb1)
+When I remount the device to /dev/sdb1, umount it and try losetup -d /dev/loop0, I will still get the same error loop: can't delete device /dev/loop0: Device or resource busy. Are there any ways to get rid of the loop device?
+linux ubuntu mount
+shareimprove this question
+	
+asked May 4 '11 at 9:13
+BiX
+1271114
+	
+   	 
+	
+That's odd, you don't usually attach loop to usb devices. How did you do that? – Keith May 4 '11 at 9:15
+   	 
+	
+I was using LUKS encryption and thought I could encrypt my 1gb usb flash drive. – BiX May 5 '11 at 1:30
+   	 
+	
+You can use LUKS for that, but not by using loop device. A LUKS partition has its own partition type. – Keith May 5 '11 at 2:37
+   	 
+	
+Sorry noobness on my part, cannot find any clear instructions online. – BiX May 5 '11 at 3:20
+   	 
+	
+Ask a new question. ;-) – Keith May 5 '11 at 5:04
+add a comment
+7 Answers
+active
+oldest
+votes
+up vote
+7
+down vote
+accepted
+	
+
+are you sure, that the device isn't busy? Have you ever tried fuser to determine an possible PID? Precautionary get all possible informations:
+
+fuser -c /dev/loop0
+fuser -d /dev/loop0
+fuser -f /dev/loop0
+
+try to stop the process, which could use /dev/loop0 if necessary use kill -9 or: try fuser -k to send the kill signal -> look at man fuser
+shareimprove this answer
+	
+answered May 4 '11 at 10:52
+The Bndr
+5,99773669
+	
+add a comment
+up vote
+27
+down vote
+	
+
+You may have to also use dmsetup to remove the device mapping. Easiest way, if it doesn't interfere with any other mappings is to use a dmsetup remove_all.
+shareimprove this answer
+	
+edited May 21 '15 at 21:30
+A.D.
+1,99112242
+	
+answered Jun 21 '12 at 0:38
+Aaron Flin
+27932
+	
+6 	 
+	
+This worked for me, though I used dmsetup info to get the mappings, then used dmsetup remove <device>. Thank you. – Mark Mann Aug 7 '13 at 20:17
+   	 
+	
+sudo dmsetup info gives me No devices found – Jayen Feb 12 '14 at 23:21
+1 	 
+	
+This also worked for me. For some reason using kpartx -a and then kpartx -d on CentOS 6.5 doesn't remove the mappings like it should. – Peter Jul 18 '14 at 6:35
+add a comment
+up vote
+7
+down vote
+	
+
+I had a similar issue with an SD card and Aaoron Flin's suggestion to use dmsetup worked for me.
+
+Specifically, you should be able to ls /dev/mapper to see if any loop0pX partitions exist.
+
+If so, you can use dmsetup remove /dev/mapper/loop0p2 to get rid of any unnecessary partitions. This can be useful if you want to keep some mappings attached.
+shareimprove this answer
+	
+edited Aug 7 '14 at 0:04
+Catskul
+6,15185591
+	
+answered Jan 11 '13 at 3:44
+Mike.P
+7111
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Try reloading the loop kernel module, if it does not help then reboot.
+shareimprove this answer
+	
+answered May 4 '11 at 9:15
+tamasd
+4,0121730
+	
+   	 
+	
+This actually worked for me (other solutions didn't) – Tuinslak Jul 4 '16 at 12:11
+add a comment
+up vote
+0
+down vote
+	
+
+If you're using Luks, you need to luksClose first
+
+cryptsetup luksClose $whatever
+losetup -D
+
+shareimprove this answer
+	
+answered Jun 10 '16 at 23:42
+choad rocker
+614
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Definitely there is a process using it. If you couldn't determine which process is preventing it from deleting, then restart your server if you can.
+shareimprove this answer
+	
+answered Sep 19 '16 at 20:29
+user3578181
+65857
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Had the same issue today and none of the answers above fixed it (I didn't try to reload the loop kernel module because I wanted to understand the actual issue)
+
+Turns out the image file associated with the loop device contained an "Linux LVM" partition, which was automatically set as shown by pvscan :
+
+$ pvscan
+  PV /dev/sda1    VG server-vg   lvm2 [417,76 GiB / 0  free]
+  PV /dev/loop0   VG vbox-vg     lvm2 [7,81 GiB / 0    free]
+  Total: 2 [425,57 GiB] / in use: 2 [425,57 GiB] / in no VG: 0 [0   ]
+
+So I had de deactivate all the Logical Volume inside the Volume Group :
+
+$ vgchange --activate n vbox-vg
+  0 logical volume(s) in volume group "vbox-vg" now active
+
+Eventually I was able to nicely detach the loop device :
+
+$ losetup -d /dev/loop0
+$ losetup -a
+$
+
+shareimprove this answer
+	
+answered 19 hours ago
+frntn
+1
+	
+add a comment
+Your Answer
+
+
+up vote
+11
+down vote
+favorite
+3
+	
+
+I unsafely removed a usb device that was attached to loop0 with losetup and could not delete nor detach loop0 afterwards.
+losetup -a shows /dev/loop0: [0005]:145606719 (/dev/sdb1)
+When I remount the device to /dev/sdb1, umount it and try losetup -d /dev/loop0, I will still get the same error loop: can't delete device /dev/loop0: Device or resource busy. Are there any ways to get rid of the loop device?
+linux ubuntu mount
+shareimprove this question
+	
+asked May 4 '11 at 9:13
+BiX
+1271114
+	
+   	 
+	
+That's odd, you don't usually attach loop to usb devices. How did you do that? – Keith May 4 '11 at 9:15
+   	 
+	
+I was using LUKS encryption and thought I could encrypt my 1gb usb flash drive. – BiX May 5 '11 at 1:30
+   	 
+	
+You can use LUKS for that, but not by using loop device. A LUKS partition has its own partition type. – Keith May 5 '11 at 2:37
+   	 
+	
+Sorry noobness on my part, cannot find any clear instructions online. – BiX May 5 '11 at 3:20
+   	 
+	
+Ask a new question. ;-) – Keith May 5 '11 at 5:04
+add a comment
+7 Answers
+active
+oldest
+votes
+up vote
+7
+down vote
+accepted
+	
+
+are you sure, that the device isn't busy? Have you ever tried fuser to determine an possible PID? Precautionary get all possible informations:
+
+fuser -c /dev/loop0
+fuser -d /dev/loop0
+fuser -f /dev/loop0
+
+try to stop the process, which could use /dev/loop0 if necessary use kill -9 or: try fuser -k to send the kill signal -> look at man fuser
+shareimprove this answer
+	
+answered May 4 '11 at 10:52
+The Bndr
+5,99773669
+	
+add a comment
+up vote
+27
+down vote
+	
+
+You may have to also use dmsetup to remove the device mapping. Easiest way, if it doesn't interfere with any other mappings is to use a dmsetup remove_all.
+shareimprove this answer
+	
+edited May 21 '15 at 21:30
+A.D.
+1,99112242
+	
+answered Jun 21 '12 at 0:38
+Aaron Flin
+27932
+	
+6 	 
+	
+This worked for me, though I used dmsetup info to get the mappings, then used dmsetup remove <device>. Thank you. – Mark Mann Aug 7 '13 at 20:17
+   	 
+	
+sudo dmsetup info gives me No devices found – Jayen Feb 12 '14 at 23:21
+1 	 
+	
+This also worked for me. For some reason using kpartx -a and then kpartx -d on CentOS 6.5 doesn't remove the mappings like it should. – Peter Jul 18 '14 at 6:35
+add a comment
+up vote
+7
+down vote
+	
+
+I had a similar issue with an SD card and Aaoron Flin's suggestion to use dmsetup worked for me.
+
+Specifically, you should be able to ls /dev/mapper to see if any loop0pX partitions exist.
+
+If so, you can use dmsetup remove /dev/mapper/loop0p2 to get rid of any unnecessary partitions. This can be useful if you want to keep some mappings attached.
+shareimprove this answer
+	
+edited Aug 7 '14 at 0:04
+Catskul
+6,15185591
+	
+answered Jan 11 '13 at 3:44
+Mike.P
+7111
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Try reloading the loop kernel module, if it does not help then reboot.
+shareimprove this answer
+	
+answered May 4 '11 at 9:15
+tamasd
+4,0121730
+	
+   	 
+	
+This actually worked for me (other solutions didn't) – Tuinslak Jul 4 '16 at 12:11
+add a comment
+up vote
+0
+down vote
+	
+
+If you're using Luks, you need to luksClose first
+
+cryptsetup luksClose $whatever
+losetup -D
+
+shareimprove this answer
+	
+answered Jun 10 '16 at 23:42
+choad rocker
+614
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Definitely there is a process using it. If you couldn't determine which process is preventing it from deleting, then restart your server if you can.
+shareimprove this answer
+	
+answered Sep 19 '16 at 20:29
+user3578181
+65857
+	
+add a comment
+up vote
+0
+down vote
+	
+
+Had the same issue today and none of the answers above fixed it (I didn't try to reload the loop kernel module because I wanted to understand the actual issue)
+
+Turns out the image file associated with the loop device contained an "Linux LVM" partition, which was automatically set as shown by pvscan :
+
+$ pvscan
+  PV /dev/sda1    VG server-vg   lvm2 [417,76 GiB / 0  free]
+  PV /dev/loop0   VG vbox-vg     lvm2 [7,81 GiB / 0    free]
+  Total: 2 [425,57 GiB] / in use: 2 [425,57 GiB] / in no VG: 0 [0   ]
+
+So I had de deactivate all the Logical Volume inside the Volume Group :
+
+$ vgchange --activate n vbox-vg
+  0 logical volume(s) in volume group "vbox-vg" now active
+
+Eventually I was able to nicely detach the loop device :
+
+$ losetup -d /dev/loop0
+$ losetup -a
+$
+
+shareimprove this answer
+	
+answered 19 hours ago
+frntn
+1
+	
+add a comment
+Your Answer
+
+

@@ -1,0 +1,2 @@
+/home/manohar/LinuxSystemProgramming/DeviceDrivers/USBInformationDriver/usbinfo.ko
+/home/manohar/LinuxSystemProgramming/DeviceDrivers/USBInformationDriver/usbinfo.o

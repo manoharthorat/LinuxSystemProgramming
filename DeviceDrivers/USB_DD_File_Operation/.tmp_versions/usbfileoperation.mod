@@ -1,0 +1,2 @@
+/home/manohar/LinuxSystemProgramming/DeviceDrivers/USB_DD_File_Operation/usbfileoperation.ko
+/home/manohar/LinuxSystemProgramming/DeviceDrivers/USB_DD_File_Operation/usbfileoperation.o
